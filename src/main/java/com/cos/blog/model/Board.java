@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -42,11 +43,11 @@ public class Board {
 	@ColumnDefault("0")
 	private int count; //조회수
 	
-	@ManyToOne //Many = Board, User = One
+	@ManyToOne(fetch = FetchType.EAGER) //Many = Board, User = One
 	@JoinColumn(name="userId") //테이블에는 userId로 만들어진다. 
 	private User  user; //DB는 오브젝트를 저장할 수 없다. FK(Foreign Key), 자바는 오브젝트를 저장할 수 있다.	
 	
-	@OneToMany(mappedBy = "board") //mappedBy 연관관계의 주인이 아니다.(난 FK가 아니다.) DB에 컬럼을 만들지 마라 
+	@OneToMany(mappedBy = "board", fetch = FetchType.EAGER) //mappedBy 연관관계의 주인이 아니다.(난 FK가 아니다.) DB에 컬럼을 만들지 마라 
 	private List<Reply> reply; 
 	
 	@CreatedDate //@CreationTimeStape
