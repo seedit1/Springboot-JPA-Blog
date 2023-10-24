@@ -1,0 +1,9 @@
+com\cos\blog\test\HttpControllerTest.class
+com\cos\blog\model\Reply.class
+com\cos\blog\BlogApplication.class
+com\cos\blog\model\User.class
+com\cos\blog\test\Member$MemberBuilder.class
+com\cos\blog\test\BlogControllerTest.class
+com\cos\blog\model\Board.class
+com\cos\blog\test\Member.class
+com\cos\blog\test\TempControllerTest.class
